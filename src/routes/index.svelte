@@ -35,7 +35,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const streamer = urlParams.get("streamer");
 
-        let connection = new io("ws://localhost:5000");
+        let connection = new io(api_url);
         connection.emit("setUniqueId", streamer, {enableExtendedGiftInfo: true});
 
         connection.on("chat", (data) => {
