@@ -28,7 +28,7 @@
     import Message from "../lib/message.svelte";
 
     let feed = [];
-    let api_url = "wss://tiktok-chat.herokuapp.com/";
+    let api_url = "wss://tiktok-chat-reader-production.up.railway.app/";
     let follower_only = false;
 
     function connect() {
