@@ -16,20 +16,21 @@
     let moderator = false;
     let new_gifter = false;
     let system = false;
-
-    message.userBadges.forEach((badge) => {
-        if (badge.name === 'Moderator') {
-            moderator = true;
-        } else if (badge.name === "New gifter") {
-            new_gifter = true;
-        } else if (badge.name === "System") {
-            moderator = false;
-            new_gifter = false;
-            system = true;
-        } else {
-            console.log(`Unknown badge: ${badge.name}`);
-        }
-    });
+    if (message.userBadges !== undefined) {
+        message.userBadges.forEach((badge) => {
+            if (badge.name === 'Moderator') {
+                moderator = true;
+            } else if (badge.name === "New gifter") {
+                new_gifter = true;
+            } else if (badge.name === "System") {
+                moderator = false;
+                new_gifter = false;
+                system = true;
+            } else {
+                console.log(`Unknown badge: ${badge.name}`);
+            }
+        });
+    }
 </script>
 
 <style>
